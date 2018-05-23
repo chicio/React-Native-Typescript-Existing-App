@@ -1,0 +1,58 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '10.0'
+use_frameworks!
+
+target 'ReactNativeTypescriptExistingApp' do
+
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge', # Include this for RN >= 0.47
+    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket', # needed for debugging
+    # Add any other subspecs you want to use in your project
+  ]
+  pod "yoga", :path => "../node_modules/react-native/ReactCommon/yoga"
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+end
+
+def change_lines_in_file(file_path, &change)
+    print "Fixing #{file_path}...\n"
+    
+    contents = []
+    
+    file = File.open(file_path, 'r')
+    file.each_line do | line |
+        contents << line
+    end
+    file.close
+    
+    File.open(file_path, 'w') do |f|
+        f.puts(change.call(contents))
+    end
+end
+
+post_install do |installer|
+    # https://github.com/facebook/yoga/issues/711#issuecomment-381098373
+    change_lines_in_file('./Pods/Target Support Files/yoga/yoga-umbrella.h') do |lines|
+        lines.reject do | line |
+            [
+            '#import "Utils.h"',
+            '#import "YGLayout.h"',
+            '#import "YGNode.h"',
+            '#import "YGNodePrint.h"',
+            '#import "YGStyle.h"',
+            '#import "Yoga-internal.h"',
+            ].include?(line.strip)
+        end
+    end
+    
+    change_lines_in_file('../node_modules/react-native/Libraries/WebSocket/RCTReconnectingWebSocket.m') do |lines|
+        lines.map { |line| line.include?("#import <fishhook/fishhook.h>") ? '#import "fishhook.h"' : line }
+    end
+end
