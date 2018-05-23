@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
         if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (!Settings.canDrawOverlays(this)) {
-                    makeText(this, "Permission not granted!!!", Toast.LENGTH_LONG);
+                    makeText(this, "Permission not granted!!!", Toast.LENGTH_LONG).show();
                 }
             }
         }
