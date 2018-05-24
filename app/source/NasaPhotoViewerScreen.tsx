@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {HelloComponent} from "app/HelloComponent"
+import {HelloComponent} from "app/source/HelloComponent"
 
 interface Props {
   name: string

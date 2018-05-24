@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "yarn jest --config=app/__tests__/jest.config.js"
   },
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.55.4"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.8.7",
     "@types/react": "16.3.14",
     "@types/react-native": "0.55.4",
     "eslint": "4.1.1",
     "eslint-config-google": "0.9.1",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react": "7.8.2",
+    "jest": "22.4.0",
     "react-native-typescript-transformer": "1.2.5",
+    "ts-jest": "22.4.6",
+    "typemoq": "2.1.0",
     "typescript": "2.8.3"
   }
 }

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "BlueComponent", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "NasaPhotoViewerScreen", null);
         setContentView(mReactRootView);
     }
 

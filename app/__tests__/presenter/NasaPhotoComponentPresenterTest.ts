@@ -37,6 +37,17 @@ describe('NasaPhotoComponentPresenterTest', () => {
 
     expect(nasaPhotos).toEqual(new NasaPhoto("title"))
   });
+
+  it('test 2', function () {
+    const nasaPhotoService = Mock.ofType<NasaPhotoRepository>()
+    nasaPhotoService
+      .setup(it => it.load())
+      .returns(() => new NasaPhoto("title2"))
+
+    const nasaPhotos = new NasaPhotoComponentPresenterTest(nasaPhotoService.object).onStart()
+
+    expect(nasaPhotos).toEqual(new NasaPhoto("title2"))
+  });
 });
 
 

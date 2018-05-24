@@ -18,6 +18,15 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
+  "typeRoots": [
+    "./node_modules/@types"
+  ],
+  "types": [
+    "react",
+    "react-native",
+    "jasmine",
+    "jest"
+  ],
   "exclude": [
     "node_modules",
     "app/__tests__",

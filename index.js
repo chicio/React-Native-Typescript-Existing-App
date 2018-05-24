@@ -1,4 +1,4 @@
 import {AppRegistry} from 'react-native';
-import {BlueComponent} from './app/BlueComponent';
+import {NasaPhotoViewerScreen} from './app/source/NasaPhotoViewerScreen';
 
-AppRegistry.registerComponent('BlueComponent', () => BlueComponent);
+AppRegistry.registerComponent('NasaPhotoViewerScreen', () => NasaPhotoViewerScreen);
