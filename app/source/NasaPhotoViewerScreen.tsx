@@ -8,7 +8,7 @@ interface Props {
 
 interface State {}
 
-export class BlueComponent extends React.Component<Props, State> {
+export class NasaPhotoViewerScreen extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
   }

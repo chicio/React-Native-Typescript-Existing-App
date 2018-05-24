@@ -5,7 +5,7 @@ interface Props {
   name: string
 }
 
-interface State {}
+interface State { }
 
 export class HelloComponent extends React.Component<Props, State> {
   constructor(props: Props) {
