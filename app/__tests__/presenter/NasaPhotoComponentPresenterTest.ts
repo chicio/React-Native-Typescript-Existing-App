@@ -1,53 +1,45 @@
-import {Mock} from "typemoq";
+import {Mock, IMock, Times} from "typemoq";
+import {NasaPhotoComponentPresenter} from "../../source/presenter/NasaPhotoComponentPresenter"
+import {NasaPhotoView} from "../../source/view/NasaPhotoView"
+import {NasaPhotoRepository} from "../../source/model/NasaPhotoRepository"
+import {NasaPhoto} from "../../source/model/NasaPhoto"
 
-class NasaPhotoComponentPresenterTest {
-  private nasaPhotoRepository: NasaPhotoRepository
+describe('NasaPhotoComponentPresenter', () => {
+  let nasaPhotoView: IMock<NasaPhotoView>
+  let nasaPhotoComponentPresenter: NasaPhotoComponentPresenter
+  let nasaPhotoRepository: IMock<NasaPhotoRepository>
 
-  constructor(nasaPhotoService: NasaPhotoRepository) {
-    this.nasaPhotoRepository = nasaPhotoService
-  }
-
-  onStart() {
-    return this.nasaPhotoRepository.load()
-  }
-}
-
-class NasaPhoto {
-  public readonly title: string
-
-  constructor(title: string) {
-    this.title = title
-  }
-}
-
-class NasaPhotoRepository {
-  load(): NasaPhoto {
-    return new NasaPhoto("")
-  }
-}
-
-describe('NasaPhotoComponentPresenterTest', () => {
-  it('test', function () {
-    const nasaPhotoService = Mock.ofType<NasaPhotoRepository>()
-    nasaPhotoService
-      .setup(it => it.load())
-      .returns(() => new NasaPhoto("title"))
-
-    const nasaPhotos = new NasaPhotoComponentPresenterTest(nasaPhotoService.object).onStart()
-
-    expect(nasaPhotos).toEqual(new NasaPhoto("title"))
+  beforeEach(() => {
+    nasaPhotoView = Mock.ofType<NasaPhotoView>()
+    nasaPhotoRepository = Mock.ofType<NasaPhotoRepository>()
+    nasaPhotoComponentPresenter = new NasaPhotoComponentPresenter(nasaPhotoView.object, nasaPhotoRepository.object)
   });
 
-  it('test 2', function () {
-    const nasaPhotoService = Mock.ofType<NasaPhotoRepository>()
-    nasaPhotoService
-      .setup(it => it.load())
-      .returns(() => new NasaPhoto("title2"))
+  describe('starts', () => {
+    it('and returns a valid nasa photo', async () => {
+      nasaPhotoRepository
+        .setup(it => it.load())
+        .returns(() => Promise.resolve(aNasaPhoto()))
 
-    const nasaPhotos = new NasaPhotoComponentPresenterTest(nasaPhotoService.object).onStart()
+      await nasaPhotoComponentPresenter.onStart()
 
-    expect(nasaPhotos).toEqual(new NasaPhoto("title2"))
+      nasaPhotoView.verify(it => it.showValid(aNasaPhoto()), Times.once())
+    });
+
+    it("and returns an error", async () => {
+      nasaPhotoRepository
+        .setup(it => it.load())
+        .returns(() => Promise.reject("Network error"))
+
+      await nasaPhotoComponentPresenter.onStart()
+
+      nasaPhotoView.verify(it => it.showAn("Network error"), Times.once())
+    });
   });
+
+  const aNasaPhoto = (): NasaPhoto => {
+    return new NasaPhoto("::title::", "::date::", "::description::", "::url::")
+  }
 });
 
 
