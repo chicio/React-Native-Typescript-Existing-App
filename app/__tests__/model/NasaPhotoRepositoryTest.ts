@@ -9,7 +9,7 @@ describe('NasaPhotoRepository', () => {
   let nasaPhotoAdapter: IMock<NasaPhotoAdapter>
   let nasaPhotoRepository: NasaPhotoRepository
 
-  beforeEach(function () {
+  beforeEach(() => {
     nasaPhotoService = Mock.ofType<NasaPhotoService>()
     nasaPhotoAdapter = Mock.ofType<NasaPhotoAdapter>()
     nasaPhotoRepository = new NasaPhotoRepository(nasaPhotoService.object, nasaPhotoAdapter.object)
@@ -27,6 +27,19 @@ describe('NasaPhotoRepository', () => {
       const nasaPhoto = await nasaPhotoRepository.load()
 
       expect(nasaPhoto).toEqual(aNasaPhoto())
+    });
+
+    it("with network error",  async () => {
+      nasaPhotoService
+        .setup(it => it.retrieve())
+        .returns(() => Promise.reject("network error"))
+      nasaPhotoAdapter
+        .setup(it => it.adapt(aNasaPhotoJson()))
+        .returns(() => aNasaPhoto())
+
+      const nasaPhoto = await nasaPhotoRepository.load()
+
+      expect(nasaPhoto).toEqual("network error")
     });
   });
 

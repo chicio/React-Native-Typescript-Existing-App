@@ -1,6 +1,6 @@
-import {NasaPhoto} from "app/source/model/NasaPhoto"
 import {NasaPhotoService} from "app/source/model/NasaPhotoService"
 import {NasaPhotoAdapter} from "app/source/model/NasaPhotoAdapter"
+import {NasaPhoto} from "app/source/model/NasaPhoto"
 
 export class NasaPhotoRepository {
   private readonly nasaPhotoService: NasaPhotoService

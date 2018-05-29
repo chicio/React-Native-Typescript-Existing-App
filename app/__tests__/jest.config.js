@@ -16,4 +16,8 @@ module.exports = {
         '<rootDir>/node_modules/',
         'jest.config.js',
     ],
+    'moduleDirectories': [
+        'node_modules',
+        '../',
+    ],
 };

@@ -10,4 +10,8 @@ export class NasaPhoto {
     this.description = description
     this.url = url
   }
+
+  static empty() {
+    return new NasaPhoto("", "", "", "")
+  }
 }
