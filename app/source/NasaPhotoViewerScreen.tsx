@@ -12,13 +12,18 @@ interface Props {
   name: string
 }
 
-interface State { }
+interface State {
+  photo: NasaPhoto
+}
 
 export class NasaPhotoViewerScreen extends React.Component<Props, State> implements NasaPhotoView {
   private readonly presenter: NasaPhotoComponentPresenter
 
   constructor(props: Props) {
     super(props)
+    this.state = {
+      photo: NasaPhoto.empty()
+    }
     this.presenter = new NasaPhotoComponentPresenter(
       this,
       new NasaPhotoRepository(new NasaPhotoService(), new NasaPhotoAdapter())
@@ -34,13 +39,13 @@ export class NasaPhotoViewerScreen extends React.Component<Props, State> impleme
   }
 
   showValid(photo: NasaPhoto): void {
-    console.log(photo)
+    this.setState({photo})
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <HelloComponent name={"Chicio"}/>
+        <HelloComponent name={this.state.photo.title}/>
       </View>
     );
   }

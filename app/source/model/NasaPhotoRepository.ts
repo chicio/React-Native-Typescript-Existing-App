@@ -15,8 +15,8 @@ export class NasaPhotoRepository {
     try {
       const json = await this.nasaPhotoService.retrieve()
       return this.nasaPhotoAdapter.adapt(json)
-    } catch(error) {
-      return error
+    } catch(_) {
+      return NasaPhoto.empty()
     }
   }
 }

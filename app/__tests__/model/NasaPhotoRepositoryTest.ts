@@ -29,7 +29,7 @@ describe('NasaPhotoRepository', () => {
       expect(nasaPhoto).toEqual(aNasaPhoto())
     });
 
-    it("with network error",  async () => {
+    it("with network error", async () => {
       nasaPhotoService
         .setup(it => it.retrieve())
         .returns(() => Promise.reject("network error"))
@@ -39,7 +39,7 @@ describe('NasaPhotoRepository', () => {
 
       const nasaPhoto = await nasaPhotoRepository.load()
 
-      expect(nasaPhoto).toEqual("network error")
+      expect(nasaPhoto).toEqual(NasaPhoto.empty())
     });
   });
 
