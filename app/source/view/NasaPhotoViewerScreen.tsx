@@ -1,20 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {HelloComponent} from "app/source/HelloComponent"
+import {Image, ScrollView, StyleSheet} from 'react-native';
 import {NasaPhotoComponentPresenter} from "app/source/presenter/NasaPhotoComponentPresenter"
 import {NasaPhotoRepository} from "app/source/model/NasaPhotoRepository"
 import {NasaPhotoService} from "app/source/model/NasaPhotoService"
 import {NasaPhotoAdapter} from "app/source/model/NasaPhotoAdapter"
 import {NasaPhotoView} from "app/source/view/NasaPhotoView"
 import {NasaPhoto} from "app/source/model/NasaPhoto"
-
-interface Props {
-  name: string
-}
-
-interface State {
-  photo: NasaPhoto
-}
+import {NasaPhotoInformationComponent} from "app/source/view/NasaPhotoInformationComponent"
 
 export class NasaPhotoViewerScreen extends React.Component<Props, State> implements NasaPhotoView {
   private readonly presenter: NasaPhotoComponentPresenter
@@ -35,30 +27,49 @@ export class NasaPhotoViewerScreen extends React.Component<Props, State> impleme
   }
 
   showAn(error: string): void {
-    console.log(error)
+    alert(error)
   }
 
   showValid(photo: NasaPhoto): void {
     this.setState({photo})
+    console.log(photo)
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <HelloComponent name={this.state.photo.title}/>
-      </View>
+      <ScrollView style={styles.container}>
+        <Image
+          style={styles.image}
+          source={{uri: this.state.photo.url}}
+        />
+        <NasaPhotoInformationComponent
+          title={this.state.photo.title}
+          date={this.state.photo.date}
+          description={this.state.photo.description}
+        />
+      </ScrollView>
     );
   }
 }
 
+interface Props {
+  name: string
+}
+
+interface State {
+  photo: NasaPhoto
+}
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#0000FF',
     width: "100%",
     height: "100%"
   },
+  image: {
+    width: "100%",
+    height: 220,
+    resizeMode: "cover",
+    backgroundColor: "red"
+  }
 });
 

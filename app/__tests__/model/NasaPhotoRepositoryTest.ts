@@ -37,9 +37,11 @@ describe('NasaPhotoRepository', () => {
         .setup(it => it.adapt(aNasaPhotoJson()))
         .returns(() => aNasaPhoto())
 
-      const nasaPhoto = await nasaPhotoRepository.load()
-
-      expect(nasaPhoto).toEqual(NasaPhoto.empty())
+      try {
+        await nasaPhotoRepository.load()
+      } catch(error) {
+        expect(error).toEqual("network error")
+      }
     });
   });
 

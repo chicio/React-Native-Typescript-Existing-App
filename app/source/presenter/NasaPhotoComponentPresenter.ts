@@ -14,8 +14,8 @@ export class NasaPhotoComponentPresenter {
     try {
       const nasaPhoto = await this.nasaPhotoRepository.load();
       this.nasaPhotoView.showValid(nasaPhoto);
-    } catch (error) {
-      this.nasaPhotoView.showAn(error)
+    } catch (_) {
+      this.nasaPhotoView.showAn("Network error")
     }
   }
 }

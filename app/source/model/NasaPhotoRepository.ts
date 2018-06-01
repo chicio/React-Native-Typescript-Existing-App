@@ -12,11 +12,7 @@ export class NasaPhotoRepository {
   }
 
   async load(): Promise<NasaPhoto> {
-    try {
-      const json = await this.nasaPhotoService.retrieve()
-      return this.nasaPhotoAdapter.adapt(json)
-    } catch(_) {
-      return NasaPhoto.empty()
-    }
+    const json = await this.nasaPhotoService.retrieve()
+    return this.nasaPhotoAdapter.adapt(json)
   }
 }
