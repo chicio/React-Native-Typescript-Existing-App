@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4513FE4320D0F57700EE0DEC /* MainViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4513FE4220D0F57700EE0DEC /* MainViewControler.swift */; };
 		45FD425720B5672100184E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD425620B5672100184E04 /* AppDelegate.swift */; };
-		45FD425920B5672100184E04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD425820B5672100184E04 /* ViewController.swift */; };
+		45FD425920B5672100184E04 /* NasaPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD425820B5672100184E04 /* NasaPhotoViewController.swift */; };
 		45FD425C20B5672100184E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD425A20B5672100184E04 /* Main.storyboard */; };
 		45FD425E20B5672200184E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD425D20B5672200184E04 /* Assets.xcassets */; };
 		45FD426120B5672200184E04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD425F20B5672200184E04 /* LaunchScreen.storyboard */; };
@@ -16,9 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4513FE4220D0F57700EE0DEC /* MainViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControler.swift; sourceTree = "<group>"; };
 		45FD425320B5672100184E04 /* ReactNativeTypescriptExistingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeTypescriptExistingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD425620B5672100184E04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45FD425820B5672100184E04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45FD425820B5672100184E04 /* NasaPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoViewController.swift; sourceTree = "<group>"; };
 		45FD425B20B5672100184E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45FD425D20B5672200184E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FD426020B5672200184E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,11 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				45FD425620B5672100184E04 /* AppDelegate.swift */,
-				45FD425820B5672100184E04 /* ViewController.swift */,
+				45FD425820B5672100184E04 /* NasaPhotoViewController.swift */,
 				45FD425A20B5672100184E04 /* Main.storyboard */,
 				45FD425D20B5672200184E04 /* Assets.xcassets */,
 				45FD425F20B5672200184E04 /* LaunchScreen.storyboard */,
 				45FD426220B5672200184E04 /* Info.plist */,
+				4513FE4220D0F57700EE0DEC /* MainViewControler.swift */,
 			);
 			path = ReactNativeTypescriptExistingApp;
 			sourceTree = "<group>";
@@ -208,8 +211,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45FD425920B5672100184E04 /* ViewController.swift in Sources */,
+				45FD425920B5672100184E04 /* NasaPhotoViewController.swift in Sources */,
 				45FD425720B5672100184E04 /* AppDelegate.swift in Sources */,
+				4513FE4320D0F57700EE0DEC /* MainViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +362,10 @@
 				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = ReactNativeTypescriptExistingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ReactNativeTypescriptExistingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -375,7 +382,10 @@
 				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = ReactNativeTypescriptExistingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ReactNativeTypescriptExistingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

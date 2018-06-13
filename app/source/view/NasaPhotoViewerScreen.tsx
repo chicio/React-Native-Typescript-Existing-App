@@ -32,7 +32,6 @@ export class NasaPhotoViewerScreen extends React.Component<Props, State> impleme
 
   showValid(photo: NasaPhoto): void {
     this.setState({photo})
-    console.log(photo)
   }
 
   render() {
@@ -69,7 +68,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 220,
     resizeMode: "cover",
-    backgroundColor: "red"
   }
 });
 

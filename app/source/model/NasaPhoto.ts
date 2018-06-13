@@ -12,6 +12,6 @@ export class NasaPhoto {
   }
 
   static empty() {
-    return new NasaPhoto("", "", "", "")
+    return new NasaPhoto("", "", "", "http://via.placeholder.com/400x220&text=loading...")
   }
 }

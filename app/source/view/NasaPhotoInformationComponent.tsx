@@ -37,17 +37,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 32,
     textAlign: 'center',
-    backgroundColor: "red"
   },
   date: {
     marginTop: 10,
     fontSize: 24,
-    backgroundColor: "blue"
   },
   description: {
     marginTop: 10,
     fontSize: 14,
-    backgroundColor: "yellow"
   }
 });
 
