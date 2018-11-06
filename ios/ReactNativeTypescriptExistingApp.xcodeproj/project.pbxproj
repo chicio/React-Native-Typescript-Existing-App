@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4513FE4320D0F57700EE0DEC /* MainViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4513FE4220D0F57700EE0DEC /* MainViewControler.swift */; };
 		45FD425720B5672100184E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD425620B5672100184E04 /* AppDelegate.swift */; };
 		45FD425920B5672100184E04 /* NasaPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD425820B5672100184E04 /* NasaPhotoViewController.swift */; };
 		45FD425C20B5672100184E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD425A20B5672100184E04 /* Main.storyboard */; };
@@ -17,7 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4513FE4220D0F57700EE0DEC /* MainViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControler.swift; sourceTree = "<group>"; };
 		45FD425320B5672100184E04 /* ReactNativeTypescriptExistingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeTypescriptExistingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD425620B5672100184E04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45FD425820B5672100184E04 /* NasaPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				45FD425D20B5672200184E04 /* Assets.xcassets */,
 				45FD425F20B5672200184E04 /* LaunchScreen.storyboard */,
 				45FD426220B5672200184E04 /* Info.plist */,
-				4513FE4220D0F57700EE0DEC /* MainViewControler.swift */,
 			);
 			path = ReactNativeTypescriptExistingApp;
 			sourceTree = "<group>";
@@ -213,7 +210,6 @@
 			files = (
 				45FD425920B5672100184E04 /* NasaPhotoViewController.swift in Sources */,
 				45FD425720B5672100184E04 /* AppDelegate.swift in Sources */,
-				4513FE4320D0F57700EE0DEC /* MainViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
