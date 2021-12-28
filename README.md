@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chicio/React-Native-Typescript-Existing-App/master/LICENSE.md)
 
 An example project in which I show how it is possible to use React Native + TypeScript in an existing app.. This is a
- project for my blog post [React Native + Typescript :purple_heart:, love at first sight. Setup in an existing app.](https://www.fabrizioduroni.it/2018/07/04/react-native-typescript-existing-app.html "React Native + Typescript :purple_heart:, love at first sight. Setup in an existing app") 
+ project for my blog post [React Native + Typescript :purple_heart:, love at first sight. Setup in an existing app.](https://www.fabrizioduroni.it/2018/07/04/react-native-typescript-existing-app/ "React Native + Typescript :purple_heart:, love at first sight. Setup in an existing app") 
 
 ### Description
 
